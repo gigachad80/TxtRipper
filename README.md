@@ -34,7 +34,7 @@ I developed this script to automate the process of retrieving robots.txt files f
 
 1.  Git clone this repo:
     ```bash
-    git clone [https://github.com/gigachad80/TxtRipper](https://github.com/gigchad80/TxtRipper)
+    git clone https://github.com/gigchad80/TxtRipper
     cd TxtRipper
     ```
 2.  Type `ruby TxtRipper.rb -h` to see options.
