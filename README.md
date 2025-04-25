@@ -57,7 +57,7 @@ ruby TxtRipper.rb -u example.com -d -f ( Fetch only Disallow paths and prints ou
 
 -   [ ] Bypass 403 integration
 -   [ ] Integration of different directory brute forcing tools
--   [ ] Add Demo syntax to use 
+-   [x] Add Demo syntax to use 
 
 ### 💓 Credits:
 
