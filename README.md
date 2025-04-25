@@ -11,7 +11,7 @@
 
 ### 📌 Overview
 
- *_TxtRipper_* This Ruby script is a utility to fetch the robots.txt file from a given domain or a list. It automatically attempts both HTTP and HTTPS, follows redirects, and includes error handling for network issues. The script can display the full robots.txt content or filter specifically for Disallow rules, which 
+ *_TxtRipper_* This Ruby script is a utility to fetch the robots.txt file from a given domain or a list. It automatically attempts both HTTP and HTTPS, follows redirects, and includes error handling for network issues. The script can display the full robots.txt content or filter Disallow paths, which can be used for directory brute forcing or fuzzing 
 
 ### 🤔 Why This Name?
 
