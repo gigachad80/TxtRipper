@@ -19,7 +19,7 @@ Initially, it was Roboto, but I wanted to a different name to give it, so I choo
 
 ### ⌚ Total Time Taken to Build & Test
 
-
+- Approx 59 min
 
 ### 🙃 Why I Created This
 
