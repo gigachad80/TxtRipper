@@ -17,9 +17,11 @@
 
 Initially, it was Roboto, but I wanted to a different name to give it, so I choose TxtRipper (as it's related to `robots.txt`).
 
-### ⌚ Total Time Taken to Build & Test
+### ⌚ Total Time Taken to Develop & Test
 
-- Approx 59 min
+- ### ⌚ Total Time Taken to Build & Test
+
+-   Approx 59 min. Actually, I've developed its first version in 20 min, but it took me this long because there were issues with sites like colgate.com and airtel.in, like **having to implement handling for HTTP redirects (such as 301 and 302), debugging SSL certificate verification failures, and fixing the regex to correctly parse `Disallow:` rules, including those with spaces.**
 
 ### 🙃 Why I Created This
 
