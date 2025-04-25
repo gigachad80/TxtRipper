@@ -15,7 +15,7 @@
 
 ### 🤔 Why This Name?
 
-Initially, it was Roboto, but I wanted to a different name to give it, so I choose TxtRipper (as it's related to `robots.txt`).
+Initially, it was Roboto, but I wanted to give it a different name , so I choose TxtRipper (as it's related to `robots.txt`).
 
 ### ⌚ Total Time Taken to Develop & Test
 
