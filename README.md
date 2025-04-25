@@ -37,14 +37,27 @@ I developed this script to automate the process of retrieving robots.txt files f
 1.  Git clone this repo:
     ```bash
     git clone [https://github.com/gigachad80/TxtRipper](https://github.com/gigchad80/TxtRipper)
+    cd TxtRipper
     ```
 2.  Type `ruby TxtRipper.rb -h` to see options.
-3.  Check given examples and use it on your target.
+3.  Check given options and use it on your target.
+
+### Demo Syntax : 
+```
+ruby TxtRipper.rb -u example.com ( Fetch all contents of robots.txt from target website )
+```
+```
+ruby TxtRipper.rb -u example.com -d ( Fetch only Disallowed paths )
+```
+```
+ruby TxtRipper.rb -u example.com -d -f ( Fetch only Disallow paths and prints output with https to show full URL , no need to add https or adding disallow paths before target. Just click them ).
+```
 
 ### 📝 Roadmap / To-do
 
 -   [ ] Bypass 403 integration
 -   [ ] Integration of different directory brute forcing tools
+-   [ ] Add Demo syntax to use 
 
 ### 💓 Credits:
 
