@@ -59,7 +59,7 @@ ruby TxtRipper.rb -u example.com -d -f ( Fetch only Disallow paths and prints ou
 
 ### 💓 Credits:
 
-* Thanks to [Defronix](https://www.youtube.com/live/j3IHA5vtuSU?si=clrTjUNkxsICSZHy)  for inspiration 
+* Thanks to Defronix for inspiration 
 
 ### 📞 Contact
 
