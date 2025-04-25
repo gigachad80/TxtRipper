@@ -3,12 +3,11 @@
 require 'net/http'
 require 'uri'
 require 'optparse'
-require 'openssl' # Required for OpenSSL::SSL::VERIFY_NONE
+require 'openssl' 
 
 # Function to fetch the content of robots.txt from a given domain, following redirects
 def fetch_robots_txt(domain, redirect_limit = 5)
   # Construct potential URLs for robots.txt (HTTPS first, then HTTP)
-  # We try both schemes as the redirect might happen from http to https or vice versa
   urls_to_try = ["https://#{domain}/robots.txt", "http://#{domain}/robots.txt"]
 
   urls_to_try.each do |url_string|
@@ -16,25 +15,21 @@ def fetch_robots_txt(domain, redirect_limit = 5)
     redirect_count = 0
 
     loop do
-      # Break loop if redirect limit is reached
       if redirect_count >= redirect_limit
         puts "Redirect limit (#{redirect_limit}) exceeded for #{url_string}"
-        break # Exit the inner loop, try the next initial URL if available
+        break 
       end
 
       begin
         # Parse the current URL string into a URI object
         uri = URI.parse(current_url)
 
-        # Create an HTTP connection object
         # The port is correctly set here based on the URI (e.g., 80 for http, 443 for https)
         http = Net::HTTP.new(uri.host, uri.port)
 
         # Configure SSL if the scheme is HTTPS
         if uri.scheme == 'https'
           http.use_ssl = true
-          # WARNING: Disabling SSL verification is a security risk and makes you vulnerable to MITM attacks.
-          # Use this only if you understand the risks or are in a trusted environment.
           http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         end
 
@@ -64,48 +59,45 @@ def fetch_robots_txt(domain, redirect_limit = 5)
             # Resolve relative redirects against the current URL
             new_url = URI.join(current_url, new_location).to_s
             puts "Redirected to: #{new_url}"
-            current_url = new_url # Update current_url for the next request
+            current_url = new_url 
             redirect_count += 1
-            # Continue the loop to fetch from the new URL
           else
             puts "Redirect received without Location header for #{current_url}"
-            break # Cannot follow redirect without location, exit inner loop
+            break
           end
 
         when Net::HTTPNotFound then
-          # Status 404 Not Found - robots.txt does not exist at the final URL
           puts "No robots.txt found at final URL: #{current_url} (404 Not Found)."
-          break # Exit the inner loop, try the next initial URL if available
+          break 
 
         else
           # Handle other HTTP errors (e.g., 403 Forbidden, 500 Server Error) at the final URL
           puts "Received final HTTP status #{response.code} from #{current_url}. Trying next URL if available."
-          break # Exit the inner loop, try the next initial URL if available
+          break 
         end
 
       rescue URI::InvalidURIError
         # Catch error if the URL format is invalid
         puts "Error: Invalid URL format '#{current_url}'"
-        break # Exit the inner loop, try the next initial URL if available
+        break 
       rescue SocketError => e
         # Catch errors related to domain name resolution or network connection issues
         puts "Connection Error for #{current_url}: #{e.message}"
-        break # Exit the inner loop, try the next initial URL if available
+        break 
       rescue Net::OpenTimeout, Net::ReadTimeout => e
         # Catch timeout errors during connection or reading
         puts "Timeout Error for #{current_url}: #{e.message}"
-        break # Exit the inner loop, try the next initial URL if available
+        break 
       rescue OpenSSL::SSL::SSLError => e
         # Catch specific SSL errors
         puts "SSL Error fetching #{current_url}: #{e.message}"
-        break # Exit the inner loop, try the next initial URL if available
+        break 
       rescue StandardError => e
-        # Catch any other unexpected errors that might occur
         puts "An unexpected error occurred fetching #{current_url}: #{e.message}"
-        break # Exit the inner loop, try the next initial URL if available
+        break 
       end
-    end # end of loop
-  end # end of urls_to_try.each
+    end  
+  end 
 
   # If the loops finish without successfully fetching robots.txt from any URL
   return "Could not fetch robots.txt for domain/URL '#{domain}' after trying all schemes and redirects."
@@ -115,7 +107,6 @@ end
 # Initialize an empty hash to store parsed options
 options = {}
 
-# Create a new OptionParser instance
 OptionParser.new do |opts|
   # Define the banner for the help message
   opts.banner = "Usage: ruby #{File.basename(__FILE__)} [options]"
@@ -207,16 +198,15 @@ elsif options[:list]
           puts disallow_lines.join
       end
     else
-      # Otherwise, print the full content (or error message)
       puts content
     end
-    puts "============================" # Print a separator for list mode
+    puts "============================" 
   end
 
 # If neither -u nor -l option was provided
 else
-  # Print an error message and usage instructions
+ 
   puts "Error: Please specify either -u or -l option."
   puts "Use -h for help."
-  exit(1) # Exit with an error code
+  exit(1) 
 end
