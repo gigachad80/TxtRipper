@@ -23,7 +23,7 @@ Approx 59 min. Actually, I've developed its first version in 20 min, but it took
 
 ### 🙃 Why I Created This
 
-I developed this script to automate the process of retrieving robots.txt files from websites. Manually checking each domain , following redirects, and extracting specific rules like Disallow can be time-consuming, especially for multiple targets. This tool provides a simple, programmatic way to fetch the content reliably and easily extract key information needed for analysis or integration into other automated tasks like bruteforcing directories or bypass 403
+I developed this script to automate the process of retrieving robots.txt files from websites directly from terminal instead manually checking each domain , following redirects, and extracting specific rules like Disallow which can be time-consuming, especially for multiple targets. This tool provides a simple, programmatic way to fetch the content reliably and easily extract key information needed for analysis or integration into other automated tasks like bruteforcing directories or bypass 403
 
 ### 📚 Requirements & Dependencies
 
