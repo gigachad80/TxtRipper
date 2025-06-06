@@ -3,7 +3,7 @@
 ===============
 
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-purple.svg)
-<a href="https://github.com/gigachad80/grep-backURLs/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+<a href="https://github.com/gigachad80/TxtRipper/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
 
 #### Fetches robots.txt content from single URLs or a list, follows redirects, handles errors, and allows filtering for Disallow directives.
 
@@ -18,8 +18,7 @@
 Initially, it was Roboto, but I wanted to give it a different name , so I choose TxtRipper (as it's related to `robots.txt`).
 
 ### ⌚ Total Time Taken to Develop & Test
-
-Approx 59 min. Actually, I've developed its first version in 20 min, but it took me this long because there were issues with sites like colgate.com and airtel.in, like **having to implement handling for HTTP redirects (such as 301 and 302), debugging SSL certificate verification failures, and fixing the regex to correctly parse `Disallow:` rules, including those with spaces.**
+1 hr 31 min 44 sec
 
 ### 🙃 Why I Created This
 
@@ -48,13 +47,17 @@ ruby TxtRipper.rb -u example.com ( Fetch all contents of robots.txt from target 
 ruby TxtRipper.rb -u example.com -d ( Fetch only Disallowed paths )
 ```
 ```
+ruby TxtRipper.rb -u example.com -d -f -n --brute ( Fetch all Diallowed paths for bruteforcing ).
+```
+
+```
 ruby TxtRipper.rb -u example.com -d -f ( Fetch only Disallow paths and prints output with https to show full URL , no need to add https or adding disallow paths before target. Just click them ).
 ```
 
 ### 📝 Roadmap / To-do
 
 -   [ ] Bypass 403 integration
--   [ ] Integration of different directory brute forcing tools
+-   [x] Integration of different directory brute forcing tools
 -   [x] Add Demo syntax to use 
 
 ### 💓 Credits:
@@ -71,4 +74,4 @@ Licensed under **GNU General Public License 3.0**
 
 ---
 
-**🕒 Last Updated:** April 25, 2025
+**🕒 Last Updated:** June 6, 2025
