@@ -18,7 +18,7 @@
 Initially, it was Roboto, but I wanted to give it a different name , so I choose TxtRipper (as it's related to `robots.txt`).
 
 ### ⌚ Total Time Taken to Develop & Test
-1 hr 31 min 44 sec
+1 hr 31 min 44 sec for v2
 
 ### 🙃 Why I Created This
 
